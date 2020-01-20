@@ -362,6 +362,11 @@ def rebokMembership(m):
     caption=Resources.rebok(0))
     bot.send_document(m.chat.id, Resources.doc["rebokFAQ"],
     caption=Resources.rebok(1))
+    bot.send_message(m.chat.id, Resources.rebok(2))
+
+@bot.message_handler(commands=['nusCard'])
+def nusCard(m):
+    bot.send_message(m.chat.id, Resources.nusCardMsg)
 
 @bot.message_handler(commands=['fowBooklet'])
 def fowBooklet(m):
@@ -404,6 +409,11 @@ def getColour(message):
 def stories(message):
     bot.send_message(message.chat.id, Others.stories())
 
+@bot.message_handler(commands=['chineseNewYearVideo'])
+def chineseNewYearVideo(message):
+    bot.send_video(message.chat.id, Others.doc["chineseNewYearVideo"],
+    caption=Others.chineseNewYearVideoMsg)
+
 #Emoji section (To create an emoji quiz with inline keyboard to decide which topic to choose from)
 @bot.message_handler(commands=['emojiLibrary'])
 def emojiArt(message):
@@ -425,6 +435,11 @@ def superSaiyan(m):
 @bot.message_handler(commands=["happyBirthday"])
 def happyBirthday(m):
     bot.send_document(m.chat.id, Others.EmojiArt.gif["happyBirthday"])
+
+@bot.message_handler(commands=["chineseNewYear"])
+def chineseNewYear(m):
+    bot.send_document(m.chat.id, Others.EmojiArt.gif["chineseNewYear"],
+    caption=Others.EmojiArt.chineseNewYearMsg)
 
 #=========================================================================================================
 

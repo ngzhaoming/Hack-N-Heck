@@ -5,6 +5,7 @@ import random
 gif  =  {
         "superSaiyan": "CgADBQADgwADlex4VXshgUo0iyicAg",
         "happyBirthday": "CgADBQADZQADqyp4VV2G9CWEuVr7Ag",
+        "chineseNewYear": "BQADBQADuQADrz8oVZGmQsNp60BDFgQ",
 }
 
 EmojiArtDesc = '''
@@ -14,7 +15,20 @@ Most of these features does not work as intended on the phone. Do ensure that yo
 /copyPasta - Custom made copy pasta for you
 /superSaiyan - Cute super saiyan transformation
 /happyBirthday - Kawaii way to wish a friend!
+/chineseNewYear - 新年快乐, 恭喜发财! 🍊🍊
 '''
+
+chineseNewYearMsg = """
+Instructions to view the Chinese New Year Emoji message:
+1) If you are a Computer Scientist you should know how to compile Java files already (Go to step 8 instead)!
+2) Go to an online Java compiler: https://www.jdoodle.com/online-java-compiler/
+3) Open up the Java file using textEdit
+4) Copy the whole message by using crtl + a and then crtl + c to copy the message
+5) Remove the default code that is given in the Online Java Compiler IDE
+6) Paste the code into the compiler by using crtl + v
+7) Execute the code by pressing on the blue execute button
+8) Once the code is compiled and executed, the Chinese New Year emoji message will be shown! 新年快乐, 恭喜发财! 🍊🍊
+"""
 
 copyPasta = '''
 I am a dynamic figure, often seen scaling walls and crushing ice. I have been known to remodel train stations on my lunch breaks, making them more efficient in the area of heat retention. I translate ethnic slurs for Cuban refugees, I write award-winning operas, I manage time efficiently. Occasionally, I tread water for three days in a row.

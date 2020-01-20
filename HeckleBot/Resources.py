@@ -34,6 +34,7 @@ Other resources that you might find interesting:
 /nusLinks - Links that might come in handy
 /moduleRegGuide - Awesome guide for module registration
 /rebokMember - Guide to setting up your rebok account
+/nusCard - 🚨NEW🚨 Use a virtual card to scan in your gym usage in NUS!
 /fowBooklet - Get to know these extraordinary people in Computing!
 """
 
@@ -53,6 +54,15 @@ Follow these steps to get your very own VIM hack:
   ia psvm public static void main (String [] args) {<CR><CR>}<Up>
 3) Type :wq
 4) EZ CLAP
+"""
+
+nusCardMsg = """
+Follow these steps to get your very own virtual NUS card:
+1) Download the NUS card application
+Android: https://play.google.com/store/apps/details?id=sg.edu.nus.nuscard&hl=en_SG
+iOS: https://apps.apple.com/sg/app/nus-card/id1464854971
+2) Upon your first login, sign up to your NUS account
+3) You will be redirected to the homepage where you can generate a QR code for your Matriculation card for scanning
 """
 
 
@@ -83,10 +93,6 @@ def linkKeyboard():
     linkKeyboard.add(InlineKeyboardButton(
         "LumiNUS", url="https://luminus.nus.edu.sg/?r=%2Fdashboard"))
     linkKeyboard.add(InlineKeyboardButton(
-        "IVLE", url="https://ivle.nus.edu.sg/default.aspx?ReturnUrl=%2fv1%2fworkspace.aspx"))
-    linkKeyboard.add(InlineKeyboardButton(
-        "CodeCrunch", url="https://codecrunch.comp.nus.edu.sg/"))
-    linkKeyboard.add(InlineKeyboardButton(
         "Skylab NUS", url="https://nusskylab-dev.comp.nus.edu.sg/"))
     linkKeyboard.add(InlineKeyboardButton(
         "Kattis", url="https://open.kattis.com"))
@@ -103,3 +109,5 @@ def rebok(n):
         return "Follow this step by step guide to set up your Rebok account!"
     if n == 1:
         return "Got any questions? Try looking at those commonly asked question"
+    if n == 2:
+        return "🚨NEW🚨 Get your virtual NUS card to register in NUS gym today! Use the command /nusCard for more information"

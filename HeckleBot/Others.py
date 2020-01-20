@@ -1,11 +1,20 @@
 import Randomizer
 import EmojiArt
 
+doc = {
+    "chineseNewYearVideo": "BAADBQADuwADBzJhVPEfnltTrx4UFgQ",
+}
+
+chineseNewYearVideoMsg = """
+    新年快乐, 恭喜发财! 🍊🍊 Here is a well-known Chinese New Year song, 贺新年 sang by the one and only rubber chicken! 🐔Enjoy!
+"""
+
 othersMsg = """
 Miscellaneous features that Hack 'N' Heck bot can do for your entertainment:
 
 /randomizer - Try out all things random
 /emojiLibrary - Beautiful wall of text
+/chineseNewYearVideo - 贺新年 sang by the one and only rubber chicken! 🐔
 /chatInformation - Get details on the current chat
 """
 
