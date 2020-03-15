@@ -203,6 +203,9 @@ def fizzBuzzAction(message):
     if verdict == "Game Over":
         bot.send_message(cid, verdict, reply_markup=hideBoard)
         userStep[cid] = 0
+    elif verdict == "Game Over. Password: g@nd@1F_luv5_200":
+        bot.send_message(cid, verdict, reply_markup=hideBoard)
+        userStep[cid] = 0
     else:
         bot.send_message(cid, verdict)
 

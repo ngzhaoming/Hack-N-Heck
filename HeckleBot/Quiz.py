@@ -94,6 +94,8 @@ def fizzBuzzAction(chat_id, name, action):
             fizzDetails["fizzBuzzHighest"] = (val - 1)
             fizzDetails["fizzBuzzName"] = name
         del fizzBuzzList[chat_id]
+        if (val - 1 == 5):
+            return "Game Over. Password: g@nd@1F_luv5_200"
         return "Game Over"
 
 def fizzBuzzStop():
