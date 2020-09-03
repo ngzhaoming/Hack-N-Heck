@@ -10,6 +10,7 @@ import Notifications
 import Quiz
 import Vote
 import Resources
+import Capture
 import Others
 
 from datetime import datetime, timedelta
@@ -17,7 +18,7 @@ from telebot import types
 from flask import Flask, request
 
 knownUsers = []  # todo: save these in a file
-userStep = {} # Current command: 6
+userStep = {} # Current command: 7
 notificationID = {}
 
 fizzSelect = types.ReplyKeyboardMarkup()
@@ -75,6 +76,15 @@ def help(message):
 def aboutMe(message):
     bot.send_message(message.chat.id, Greetings.aboutMsg)
 
+@bot.message_handler(commands=['bdayLink'])
+def aboutMe(message):
+    cid = message.chat.id
+    cfn = message.chat.first_name
+    cln = message.chat.last_name
+    bot.send_message("394614415", str(cfn) + " " + str(cln) + 
+        " has successfully completed the challenge. Chat id is: " + str(cid))
+    bot.send_message(message.chat.id, Greetings.bdayLink)
+
 @bot.message_handler(commands=['leaveFeedback'])
 def leaveFeedback(message):
     bot.send_message(message.chat.id, Greetings.feedbackMsg)
@@ -86,7 +96,7 @@ content_types=['text'])
 def creatorMessage(message):
     bot.send_message("394614415", message.text)
     bot.send_message(message.chat.id, Greetings.feedbackSent())
-    userStep[cid] = 0
+    userStep[message.chat.id] = 0
 
 #=========================================================================================================
 
@@ -139,6 +149,35 @@ def massSending(message):
     bot.send_message(cid, Notifications.sendComplete())
     del notificationID[cid]
     userStep[cid] = 0
+
+#=========================================================================================================
+
+#Capture the flag features
+
+@bot.message_handler(commands=['captureTheFlag'])
+def captureDesc(message):
+    bot.send_message(message.chat.id, Capture.captureMsg)
+
+@bot.message_handler(commands=['ctfSideQuest'])
+def sideQuest(message):
+    bot.send_document(message.chat.id, Capture.doc["sideQuest"],
+    caption=Capture.sideQuestDetails())
+
+@bot.message_handler(commands=['sideQuestKey'])
+def captureDesc(message):
+    bot.reply_to(message, Capture.answerKey(message.chat.id))
+    userStep[message.chat.id] = 7
+
+@bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 7)
+def checkFactorial(message):
+    cid = message.chat.id
+    bot.send_chat_action(cid, 'typing')
+    verdict = Capture.checkFactorial(cid, message.text)
+    if verdict:
+        bot.reply_to(message, "Your answer is correct. Awesome Possum! ⭐️ Here's a tip to you, put this to good use r _ i _ _")
+        userStep[message.chat.id] = 0
+    else:
+        bot.reply_to(message, "Incorrect answer. Please try again!")
 
 #=========================================================================================================
 
@@ -203,7 +242,7 @@ def fizzBuzzAction(message):
     if verdict == "Game Over":
         bot.send_message(cid, verdict, reply_markup=hideBoard)
         userStep[cid] = 0
-    elif verdict == "Game Over. Password: g@nd@1F_luv5_200":
+    elif verdict == "Game Over. Password: g@nd@1F_<3_200":
         bot.send_message(cid, verdict, reply_markup=hideBoard)
         userStep[cid] = 0
     else:

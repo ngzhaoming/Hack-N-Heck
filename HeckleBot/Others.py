@@ -15,6 +15,7 @@ Miscellaneous features that Hack 'N' Heck bot can do for your entertainment:
 /randomizer - Try out all things random
 /emojiLibrary - Beautiful wall of text
 /chineseNewYearVideo - 贺新年 sang by the one and only rubber chicken! 🐔
+/captureTheFlag - You require my assistant? 🧙
 /chatInformation - Get details on the current chat
 """
 

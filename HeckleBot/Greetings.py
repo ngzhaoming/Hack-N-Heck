@@ -25,11 +25,18 @@ Hack 'N' Heck bot is currently deployed and fully functional. I hope to incorpor
 Do try out the features that he has now and hope you have fun while doing so! 😄
 """
 
+bdayLink = """
+Here is your link: https://www.youtube.com/watch?v=RaeLAwacDG4.
+
+Do enjoy your day and have a blast! 😄😄😄
+"""
+
 feedbackMsg = """
 Thank you for trying out Hack 'N' Heck bot! You can send any message that you want to the creator through this feature.
 
 I will read all your messages and continue to improve Hack 'N' Heck bot!
 """
+
 feedbackPrompt = "Please type your message after this text."
 
 def greet(name):
